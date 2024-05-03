@@ -6,6 +6,7 @@ const app = express();
 import {config} from 'dotenv';
 config()
 
+
 app.get('/', async (req, res) => {
     const products = await getProducts();
     const markup = products.map((p) => `<a style="display: block; color: black; border: solid 2px purple; margin: 20px; padding: 10px;"href="/products/${p.id}">${p.title} - ${p.price} kr</a>`).join(' ');
